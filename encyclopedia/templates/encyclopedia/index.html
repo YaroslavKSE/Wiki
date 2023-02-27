@@ -5,13 +5,17 @@
 {% endblock %}
 
 {% block body %}
+{%if search%}
+<h3> Here is the results for: {{value}} </h3>
+{%else%}
     <h1>All Pages</h1>
-
+{%endif%}
     <ul>
         {% for entry in entries %}
             <a href="/wiki/{{entry}}">
                 <li>{{ entry }}</li> </a>
         {% endfor %}
     </ul>
+
 
 {% endblock %}
