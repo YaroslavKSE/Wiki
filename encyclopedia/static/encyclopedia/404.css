@@ -1,0 +1,23 @@
+div{
+    border: 3px solid grey;
+    text-align: center;
+    font-family: Arial serif;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+h1{
+    padding: 60px 0;
+    font-size: 110px
+}
+
+h3{
+    font-size: 30px
+}
