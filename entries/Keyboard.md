@@ -1,0 +1,1 @@
+Keyboard is one of the input devices to interact with PC
