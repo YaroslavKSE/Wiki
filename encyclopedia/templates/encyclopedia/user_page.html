@@ -8,4 +8,9 @@
 
 {{entry | safe}}
 
+<form action="{% url 'edit'%}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="e_title" value="{{e_title}}">
+    <input type="submit" value="Edit" class="select2-container--below">
+</form>
 {% endblock %}

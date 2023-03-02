@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block body %}
+
+<div class="user_form" xmlns="http://www.w3.org/1999/html">
+    <h1> Create your page below </h1>
+    <form action="{% url 'save_edit'%}" method="POST">
+        <label> Title: </label>
+        <input type="text" name="title" placeholder="Enter a title" value="{{e_title}}">
+        <label> Markdown Content </label>
+        <textarea name="existing_page"> {{entry}} </textarea>
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit" value="Edit" class="select2-container--below">
+    </form>
+</div>
+
+{% endblock %}

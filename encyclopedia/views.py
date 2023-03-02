@@ -86,3 +86,18 @@ def random_web_page(request):
     pages = util.list_entries()
     random_page = random.choice(pages)
     return HttpResponseRedirect(reverse("entry", kwargs={"entry": random_page}))
+
+
+def edit(request):
+    if request.method == "POST":
+        title = request.POST["e_title"]
+        content = util.get_entry(title)
+        return render(request, "encyclopedia/edit.html", {"entry": content, "e_title": title})
+
+
+def save_edit(request):
+    if request.method == "POST":
+        title = request.POST["title"]
+        content = request.POST["existing_page"]
+        util.save_entry(title, content)
+    return HttpResponseRedirect(reverse("entry", kwargs={"entry": title}))
